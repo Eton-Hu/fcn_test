@@ -1,0 +1,59 @@
+2022-07-16 23:43:19,141 FCN_Model INFO: Using 1 GPUS
+2022-07-16 23:43:19,142 FCN_Model INFO: Namespace(config_file='configs/train_fcn32s.yml', opts=['SOLVER.BASE_LR', '0.0025', 'SOLVER.MAX_EPOCHS', '8'])
+2022-07-16 23:43:19,142 FCN_Model INFO: Loaded configuration file configs/train_fcn32s.yml
+2022-07-16 23:43:19,142 FCN_Model INFO: 
+
+MODEL:
+  META_ARCHITECTURE: "fcn32s"
+
+  BACKBONE:
+    PRETRAINED: False
+    WEIGHT: 'C:/Users/ZOE ZHAO/Documents/fcn.pytorch/train_fcn32s/fcn_model_13.pth'
+
+  REFINEMENT:
+    NAME: ''
+
+DATASETS:
+  ROOT: 'C:/Users/ZOE ZHAO/Documents/fcn.pytorch/dataset/VOCdevkit/VOC2012'
+
+SOLVER:
+  MAX_EPOCHS: 13
+  CHECKPOINT_PERIOD: 1
+
+OUTPUT_DIR: "C:/Users/ZOE ZHAO/Documents/fcn.pytorch/inference_fcn32s"
+2022-07-16 23:43:19,145 FCN_Model INFO: Running with config:
+DATALOADER:
+  NUM_WORKERS: 0
+DATASETS:
+  ROOT: C:/Users/ZOE ZHAO/Documents/fcn.pytorch/dataset/VOCdevkit/VOC2012
+INPUT:
+  PIXEL_MEAN: [0.485, 0.456, 0.406]
+  PIXEL_STD: [0.229, 0.224, 0.225]
+  PROB: 0.5
+MODEL:
+  BACKBONE:
+    NAME: vgg16
+    PRETRAINED: False
+    WEIGHT: C:/Users/ZOE ZHAO/Documents/fcn.pytorch/train_fcn32s/fcn_model_13.pth
+  DEVICE: cpu
+  META_ARCHITECTURE: fcn32s
+  NUM_CLASSES: 21
+  REFINEMENT:
+    NAME: 
+    WEIGHT: 
+OUTPUT_DIR: C:/Users/ZOE ZHAO/Documents/fcn.pytorch/inference_fcn32s
+SOLVER:
+  BASE_LR: 0.0025
+  BIAS_LR_FACTOR: 2
+  CHECKPOINT_PERIOD: 1
+  IMS_PER_BATCH: 1
+  LOG_PERIOD: 400
+  MAX_EPOCHS: 8
+  MOMENTUM: 0.99
+  OPTIMIZER_NAME: SGD
+  WEIGHT_DECAY: 0.0005
+  WEIGHT_DECAY_BIAS: 0
+TEST:
+  IMS_PER_BATCH: 1
+  WEIGHT: 
+2022-07-16 23:43:19,928 FCN_Model.train INFO: Start training

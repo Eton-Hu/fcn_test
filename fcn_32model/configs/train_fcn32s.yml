@@ -1,0 +1,19 @@
+
+MODEL:
+  META_ARCHITECTURE: "fcn32s"
+
+  BACKBONE:
+    PRETRAINED: False
+    WEIGHT: 'C:/Users/ZOE ZHAO/Documents/fcn.pytorch/train_fcn32s/fcn_model_13.pth'
+
+  REFINEMENT:
+    NAME: ''
+
+DATASETS:
+  ROOT: '../input/voc2012/data/VOCdevkit/VOC2012'
+
+SOLVER:
+  MAX_EPOCHS: 13
+  CHECKPOINT_PERIOD: 1
+
+OUTPUT_DIR: "./inference_fcn32s"

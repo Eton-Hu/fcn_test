@@ -17,7 +17,7 @@ from yacs.config import CfgNode as CN
 _C = CN()
 
 _C.MODEL = CN()
-_C.MODEL.DEVICE = "cpu"
+_C.MODEL.DEVICE = "cuda"
 _C.MODEL.NUM_CLASSES = 21
 
 _C.MODEL.META_ARCHITECTURE = "fcn32s"
@@ -54,7 +54,7 @@ _C.DATASETS.ROOT = ''
 # -----------------------------------------------------------------------------
 _C.DATALOADER = CN()
 # Number of data loading threads
-_C.DATALOADER.NUM_WORKERS = 0
+_C.DATALOADER.NUM_WORKERS = 8
 
 # ---------------------------------------------------------------------------- #
 # Solver
@@ -78,12 +78,12 @@ _C.SOLVER.LOG_PERIOD = 400
 # Number of images per batch
 # This is global, so if we have 8 GPUs and IMS_PER_BATCH = 16, each GPU will
 # see 2 images per batch
-_C.SOLVER.IMS_PER_BATCH = 1
+_C.SOLVER.IMS_PER_BATCH = 16
 
 # This is global, so if we have 8 GPUs and IMS_PER_BATCH = 16, each GPU will
 # see 2 images per batch
 _C.TEST = CN()
-_C.TEST.IMS_PER_BATCH = 1
+_C.TEST.IMS_PER_BATCH = 16
 _C.TEST.WEIGHT = ""
 
 # ---------------------------------------------------------------------------- #

@@ -10,7 +10,7 @@ MODEL:
     NAME: ''
 
 DATASETS:
-  ROOT: '../input/voc2012/data/VOCdevkit/VOC2012'
+  ROOT: '../../../input/voc2012/data/VOCdevkit/VOC2012'
 
 SOLVER:
   MAX_EPOCHS: 13

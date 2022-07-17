@@ -57,8 +57,8 @@ def do_train(
     RunningAverage(output_transform=lambda x: x).attach(trainer, 'avg_loss')
 
     # automatically adding handlers via a special `attach` method of `Checkpointer` handler
-    trainer.add_event_handler(Events.EPOCH_COMPLETED, checkpointer, {'model': model.state_dict(),
-                                                                     'optimizer': optimizer.state_dict()})
+    trainer.add_event_handler(Events.EPOCH_COMPLETED, checkpointer, {'model': model,
+                                                                     'optimizer': optimizer})
 
     # automatically adding handlers via a special `attach` method of `Timer` handler
     timer.attach(trainer, start=Events.EPOCH_STARTED, resume=Events.ITERATION_STARTED,
